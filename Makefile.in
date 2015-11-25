@@ -167,7 +167,7 @@ impressive: all
 # These build rules need to be run every time as the Makefile cannot
 # figure out the dependencies, but latexmk can. These use the Tom
 # Cruise standby, "Go... for it." "You certainly did."
-$(DIR_BUILD)/friggeri-cv.pdf: friggeri-cv.tex $(SUPPORT_TEX) Makefile go-for-it
+$(DIR_BUILD)/%-lualatex.pdf: %-lualatex.tex $(SUPPORT_TEX) Makefile go-for-it
 	$(ENV) $(LATEXMK_PDF_LUALATEX) $<
 $(DIR_BUILD)/%.pdf: %.tex $(SUPPORT_TEX) Makefile go-for-it
 	$(ENV) $(LATEXMK_PDF) $<
