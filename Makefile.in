@@ -6,7 +6,8 @@
 # Each one of these needs a set of explicit build rules below. I can't
 # use pattern rules because GNU Make doesn't allow for PHONY pattern
 # rules. More detail below.
-SOURCES_TEX = __PAPER.tex __PRESENTATION.tex handout.tex
+SOURCES_TEX  = __PAPER.tex
+SOURCES_TEX_UNUSED = __PRESENTATION.tex handout.tex
 
 #--------------------------------------- Configuration that _should_ be static
 DIR_BUILD   = build
@@ -15,9 +16,12 @@ DIR_FIG     = $(DIR_SRC)/figures
 DIR_FIG_R   = $(shell find $(DIR_FIG) -type d)
 DIR_BAK     = $(DIR_SRC)/bak
 DIR_CB      = submodules/palette-art
+DIR_TEMPLATES = $(DIR_SRC)/templates $(shell ls $(DIR_SRC)/templates/*/)
+DIR_EXAMPLES = $(DIR_SRC)/examples
 DIR_TEX     = $(DIR_SRC) \
 	$(DIR_FIG_R) \
-	$(DIR_SRC)/templates \
+	$(DIR_TEMPLATES) \
+	$(DIR_EXAMPLES) \
 	$(DIR_CB)/latex
 DIR_BIB     = . ../ ../src/bib build
 DIR_SCRIPTS = scripts
@@ -29,7 +33,12 @@ TARGETS_PDF = $(SOURCES_TEX:%.tex=$(DIR_BUILD)/%.pdf)
 TARGETS_PS  = $(SOURCES_TEX:%.tex=$(DIR_BUILD)/%.ps)
 TARGETS_OPT = $(TARGETS_PDF:%.pdf=%-opt.pdf)
 
-SPACE       = $(EMPTY) $(EMPTY)
+EXAMPLES_TEX = $(notdir $(shell find $(DIR_EXAMPLES) -regex '^.+\.tex'))
+EXAMPLES_PDF = $(EXAMPLES_TEX:%.tex=$(DIR_BUILD)/%.pdf)
+EXAMPLES_PS  = $(EXAMPLES_TEX:%.tex=$(DIR_BUILD)/%.ps)
+EXAMPLES_OPT = $(TARGETS_PDF:%.pdf=%-opt.pdf)
+
+SPACE = $(EMPTY) $(EMPTY)
 
 LATEXMK_PDF = latexmk \
 	-pdf \
@@ -37,23 +46,36 @@ LATEXMK_PDF = latexmk \
 	-bibtex \
 	-time \
 	-outdir=$(DIR_BUILD)
-LATEXMK_PS  = latexmk \
+LATEXMK_PS = latexmk \
 	-ps \
 	-latexoption="--shell-escape -halt-on-error -file-line-error" \
 	-bibtex \
 	-time \
 	-outdir=$(DIR_BUILD)
-GS_OPT      = gs \
+GS_OPT = gs \
 	-sDEVICE=pdfwrite \
 	-dNOPAUSE \
 	-dBATCH
-ENV         = env TEXINPUTS="$(TEXINPUTS)$(subst $(SPACE),:,$(DIR_TEX)):" \
+LATEXMK_PDF_XELATEX = latexmk \
+	-xelatex \
+	-latexoption="--shell-escape -halt-on-error -file-line-error" \
+	-bibtex \
+	-time \
+	-outdir=$(DIR_BUILD)
+LATEXMK_PDF_LUALATEX = latexmk \
+	-lualatex \
+	-latexoption="--shell-escape -halt-on-error -file-line-error" \
+	-bibtex \
+	-time \
+	-outdir=$(DIR_BUILD)
+ENV = env TEXINPUTS="$(TEXINPUTS)$(subst $(SPACE),:,$(DIR_TEX)):" \
 	BIBINPUTS="$(BIBINPUTS)$(subst $(SPACE),:,$(DIR_BIB)):"
 
-vpath %.tex src
+vpath %.tex $(DIR_SRC)
+vpath %.tex $(DIR_EXAMPLES)
 vpath %.svg $(DIR_FIG_R)
 
-.PHONY: all clean format format-build noformat-build ps optimized \
+.PHONY: all clean examples format format-build noformat-build ps optimized \
 	refresh-mupdf page-limit \
 	go-for-it
 
@@ -76,6 +98,9 @@ format-build: format noformat-build
 # Top-level build target that will build all targets without source
 # file cleanup
 noformat-build: $(TARGETS_EPS) $(TARGETS_PDF) refresh-mupdf page-limit signoff
+
+# Build example resumes
+examples: $(EXAMPLES_PDF) refresh-mupdf
 
 # mupdf will refresh on a SIGHUP, so we send a SIGHUP to all
 # instances of mupdf that we find
@@ -142,6 +167,8 @@ impressive: all
 # These build rules need to be run every time as the Makefile cannot
 # figure out the dependencies, but latexmk can. These use the Tom
 # Cruise standby, "Go... for it." "You certainly did."
+$(DIR_BUILD)/friggeri-cv.pdf: friggeri-cv.tex $(SUPPORT_TEX) Makefile go-for-it
+	$(ENV) $(LATEXMK_PDF_LUALATEX) $<
 $(DIR_BUILD)/%.pdf: %.tex $(SUPPORT_TEX) Makefile go-for-it
 	$(ENV) $(LATEXMK_PDF) $<
 $(DIR_BUILD)/%.ps: %.tex $(SUPPORT_TEX) Makefile go-for-it

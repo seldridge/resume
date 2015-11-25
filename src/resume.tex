@@ -1,0 +1,196 @@
+\documentclass[letterpage]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\pagestyle{empty}
+%% \setlength{\tabcolsep}{0em}
+
+\hypersetup {
+  pdfauthor={Schuyler Eldridge},
+  pdftitle={Resume -- Schuyler Eldridge},
+}
+
+\usepackage{enumitem}
+\setlist[description]{leftmargin=1.5em,labelindent=0em}
+
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+
+\begin{document}
+\begin{center}
+
+{\huge \textbf{Schuyler Eldridge}}\\
+\href{mailto:schuyler.eldridge@gmail.com}{schuyler.eldridge@gmail.com}
+$\bullet$ \url{http://people.bu.edu/schuye} $\bullet$ 914.382.1315
+\end{center}
+\hrule
+\vspace{5pt}
+
+\noindent
+\begin{minipage}[t]{0.36\textwidth}
+  %% \flushright
+  \subsection*{Education}
+  \vspace{-5pt}
+  \begin{description}
+  \item[Boston University] \hfill Boston, MA\\ \emph{PhD Computer
+    Eng.} \hfill May 2016\\ Dean's Fellowship \hfill GPA 3.70/4.0
+    \\NASA Space Technology Fellowship
+  \item[Boston University] \hfill Boston, MA\\ \emph{BS Electrical
+    Eng.} \hfill 2010\\ Summa Cum Laude \hfill GPA 3.85/4.0
+  \end{description}
+
+  \subsection*{Computer Skills}
+  \vspace{-5pt}
+  \begin{description}
+  \item[Fluent Languages] \hfill\\ Bash, C, Chisel, \LaTeX, GNU Make, Matlab, Perl, Verilog, System Verilog
+    \vspace{-5pt}
+  \item[Proficient Languages] \hfill\\ \CPP, Java, Python, Assembly (x86, RISC-V), Scala, TCL
+    \vspace{-5pt}
+  \item[Operating Systems] \hfill\\ Linux, Windows
+    \vspace{-5pt}
+  \item[Tools] \hfill\\ Git, Emacs, Modelsim, Cadence RTL Compiler, Cadence SOC Encounter, Icarus Verilog, GTKWave, Inkscape
+  \end{description}
+
+  \subsection*{Relevant Coursework}
+  \vspace{-5pt}
+  \begin{itemize}\setlength\itemsep{0pt}
+  \item Computer Organization, Architecture
+  \item Advanced Digital Design in Verilog
+  \item VLSI, VLSI Project
+  \item Advanced Data Structures
+  \item Digital Signal Processing
+  %% \item Microprocessors
+  \item Control Systems
+  %% \item Signals and Systems
+  \item Principles and Methods of Cognitive and Neural Modeling
+  %% \item Learning Models
+  \end{itemize}
+  %% Computer Organization, Computer Architecture (EC513), Advanced
+  %% Digital Design in Verilog (EC551), Microprocessors (EC450), VLSI
+  %% (EC571), VLSI Project (EC772), Principles and Methods of Cognitive and
+  %% Neural Modeling (CN510), Learning Models (CN570)
+
+  %% \subsection*{Awards}
+  \vspace{-5pt}
+  %% \emph{NASA Space Tech. Research Fellowship}\\
+  %% \emph{Dean's Fellowship}\\
+  %% \emph{BU Engineering Scholar Award}
+
+  \subsection*{Links}
+  \vspace{-5pt}
+  \href{http://www.github.com/seldridge}{GitHub://seldridge}\\
+  \href{http://www.facebook.com/schuyler.eldridge}{Facebook://schuyler.eldridge}\\
+  \href{http://www.linkedin.com/in/schuylereldridge}{LinkedIn://schuylereldridge}\\
+  \href{http://www.twitter.com/theSchuyler}{Twitter://theSchuyler}
+
+  \subsection*{Activities}
+  \vspace{-5pt} Former nationally competitive Figure Skater---2007 US
+  Nationals competitor, 2009 and 2010 US National Intercollegiate Team
+  Champion representing Boston University
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.59\textwidth}
+  \subsection*{Research}
+  \vspace{-5pt}
+  \begin{description}
+  \item[Neural Network Accelerator Architectures] \hfill
+    2012--Present\\ This research focuses on the design,
+    implementation, and use of a \emph{multithreaded neural network accelerator} tightly integrated with a RISC-V microprocessor for acceleration of machine learning applications and to enable automatic microprocessor parallelization.
+    \begingroup
+    \renewcommand{\section}[2]{}
+    \begin{thebibliography}{2014}
+    \bibitem[2015]{eldridge2015a}
+      \href{}{Eldridge, S., Waterland, A., Seltzer, M., Appavoo, J., and Joshi, A. Towards General-Purpose Neural Network Computing in {\em
+          Parallel Architectures and Compilation Techniques (PACT)}.}
+    \bibitem[2015]{eldridge2015}
+      \href{http://people.bu.edu/schuye/files/barc2015-eldridge-paper.pdf}{Eldridge, S. and Joshi, A. Exploiting Hidden Layer Modular Redundancy for Fault-Tolerance in Neural Network Accelerators in \em{Boston Area Architecture Workshop (BARC)}}
+    \bibitem[2014]{appavoo2014}
+      \href{http://people.bu.edu/schuye/files/appavoo-neuroarch-2014.pdf}{Appavoo,
+        J., Waterland, A., Zhao, K., Eldridge, S., Joshi, A., Seltzer,
+        M., Homer, S. Programmable Smart Machines: A Hybrid
+        Neuromorphic Approach to General Purpose Computation in {\em workshop on Neuromorphic Architectures (NeuroArch).}}
+    \bibitem[2014]{eldridge2014}
+      \href{http://people.bu.edu/schuye/files/glsvlsi2014-eldridge.pdf}{Eldridge,
+        S., Raudies, F., Zou, D., and Joshi, A. Neural
+        Network-based Accelerators for Transcendental Function
+        Approximation. In {\em Great Lakes Symposium on VLSI (GLSVLSI)}.}
+    \bibitem[2013]{eldridge2013}
+      \href{http://people.bu.edu/schuye/files/approx-fpu-bic2013.pdf}{Eldridge,
+        S., Raudies, F., and Joshi, A. Approximate Computation
+        Using a Neuralized FPU. In {\em Brain Inspired Computing Workshop (BIC)}.}
+    \end{thebibliography}
+    \endgroup
+    %% \item[Autonomous Navigation in Land and Aerial Robots] \hfill
+    %%   2010--2012\\ In a joint project with Boston University's Center
+    %%   for Computational Neuroscience and Neural Technologies, I
+    %%   developed a hardware implementation of a high density optic flow
+    %%   algorithm.  \begingroup \renewcommand{\section}[2]{}
+    %%   \begin{thebibliography}{2014}
+    %%   \bibitem[2014]{raudies2014}
+    %%     \href{http://link.springer.com/article/10.1007/s10015-014-0153-1}{
+    %%       Raudies, F., Eldridge, S., Joshi, A., and Versace, M. (2014).
+    %%       Learning to navigate in a virtual world using optic flow and
+    %%       stereo disparity signals. {\em Artificial Life and Robotics}.}
+    %%   \end{thebibliography}
+    %%   \endgroup
+  \end{description}
+
+  \subsection*{Work Experience}
+  \vspace{-5pt}
+  \begin{description}
+  \item[NASA Jet Propulsion Lab] \hfill Summer 2013, 2014, 2015\\ Summer intern as part of a NASA Space Technology Research Fellowship working on fault-tolerance of and the design/implementation of neural network accelerators.
+  \item[Intel Corporation] \hfill Summer 2010, 2011\\ Two internships working on the testing and validation of Haswell memory
+    controllers (2011) and the design and optimization of hashing
+    functions in x86 assembly for performance and quality (2010). \begingroup
+    \renewcommand{\section}[2]{}
+    \begin{thebibliography}{2011}
+    \bibitem[2011]{gopal2011}
+      \href{http://www.google.com/patents/US20130290285}{Gopal, V.,
+        Guilford, J.~D., Eldridge, S., Wolrich, G.~M., Ozturk, E., and
+        Feghali, W.~K. Digest generation. US Patent
+        App. 13/995,236.}
+    \end{thebibliography}
+    \endgroup
+  \item[Teaching Assistant / Guest Lecturer, Logic Design] \hfill
+    2009--2011\\ Designed final projects, provided lab help, and
+    delivered guest lectures on Verilog 2001 to undergraduate and
+    graduate students.
+  \end{description}
+
+  \subsection*{Projects}
+  \vspace{-5pt}
+  \begin{description}
+  \item[Capstone Project, Object Tracking System] \hfill Fall
+    2009--Spring 2010
+    %% Winner P.T. Hsu Best Project Award Designed a
+    %% proportional/intergral/derivative control algorithm design and
+    %% color threshold object detection Implemented on a custom PCB with
+    %% a BlackFin DSP interfacing with a Xilinx FPGA
+  \item[FPGA Frogger, Advanced Digital Design in Verilog]\hfill Fall
+    2009
+    %% Combinational pixel generation for VGA display, pseudo-random
+    %% hardware number generation
+  \item[32-bit MIPS CPU in Verilog, Computer Organization]\hfill Fall 2008
+    %% 5-stage pipelined CPU running MIPS instruction subset with hazard
+    %% detection / data forwarding
+  \end{description}
+
+  %%   \subsection*{Relevant Coursework}
+  \vspace{-5pt}
+  %%   Computer Organization (EC413), Computer Architecture (EC513), Advanced
+  %%   Digital Design in Verilog (EC551), Microprocessors (EC450), VLSI
+  %%   (EC571), VLSI Project (EC772), Principles and Methods of Cognitive and
+  %%   Neural Modeling (CN510), Learning Models (CN570)
+  %% \end{description}
+
+\end{minipage}
+
+\end{document}
