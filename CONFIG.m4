@@ -11,6 +11,6 @@ dnl   define(PAPER, paper)
 dnl   define(PRESENTATION, presentation)
 dnl
 dnl The name of the top-level LaTeX paper file
-define(__PAPER, resume)
+define(__PAPER, resume resume-friggeri-lualatex)
 dnl The name of the top-level LaTeX presentation file
 define(__PRESENTATION, latex-base-presentation)

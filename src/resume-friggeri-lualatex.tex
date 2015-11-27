@@ -1,0 +1,207 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.2 (3/5/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\hypersetup {
+  pdfauthor={Schuyler Eldridge},
+  pdftitle={Resume -- Schuyler Eldridge},
+}
+
+\addbibresource{schuyler.bib} % Specify the bibliography file to include publications
+
+\begin{document}
+
+\header{schuyler}{eldridge}{computer engineer} % Your name and current job title/field
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{contact}
+\href{mailto:schuye@bu.edu}{schuye@bu.edu}
+\href{tel:9143821315}{+1 (914) 382 1315}
+US Citizen
+~
+\href{http://people.bu.edu/schuye}{people.bu.edu/schuye}
+\href{http://github.com/seldridge}{github://seldridge}
+\section{hardware}
+Verilog
+System Verilog
+Chisel
+\section{software}
+Assembly (x86, RISC-V)
+Bash
+C/\CPP
+GNU Make
+Java
+\LaTeX
+Matlab
+Perl
+Python
+Scala
+TCL
+\section{tools}
+Cadence RTL Compiler
+Cadence SoC Encounter
+Emacs
+Gem5
+GTKWave
+Git
+Icarus Verilog
+Linux
+Modelsim
+\section{coursework}
+Advanced Data Structures
+Computer Architecture
+Control Systems
+Digital Design in Verilog
+Digital Signal Processing
+Microprocessors
+VLSI
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{education}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2010--2016}
+{Ph.D {\normalfont Computer Engineering}}
+{Boston University}
+{\emph{Multi-Transaction Neural Network Accelerators} \\
+  Design, implementation, and management of neural network accelerator architectures for approximate computing, general use, and prediction of microprocessor state
+  \begin{itemize}
+  \item Accelerator architectures in Verilog with fixed-topology as mathematical approximators
+  \item Multi-transaction accelerator for a RISC-V microprocessor implemented in C++, SystemVerilog, and Chisel
+  \item User and supervisor libraries in C for safe transaction management
+  \end{itemize}
+  \printbibinline{keythesis}
+}
+
+%------------------------------------------------
+
+\entry
+{2006--2010}
+{BS {\normalfont Electrical Engineering}}
+{Boston University}
+{Summa Cum Laude -- GPA 3.85/4.0
+  \begin{itemize}
+  \item Capstone Project, Object Tracking System on FPGA and DSP
+  \item FPGA Frogger in Verilog
+  \item 32-bit MIPS 5-stage pipelined CPU in Verilog
+  \end{itemize}
+}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{experience}
+
+%% \subsection{Internships}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{Summer 2010\\Summer 2011}
+{Intel Corporation}
+{Hudson, MA}
+{\emph{Graduate Technical Intern} \\
+  Design and optimization of hashing functions in x86 assembly (2010) and testing and validation of memory controllers (2011)
+  \printbibinline{keyintel}
+}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{awards}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2012--2016}
+{Space Technology Research Fellowship}
+{NASA}
+{\emph{Biologically-Inspired Hardware for Land/Aerial Robots}}
+
+\entry
+{2010}
+{Dean's Fellowship}
+{Boston University}
+{Full scholarship merit award for first year Ph.D students}
+
+\entry
+{2010}
+{P. T. Hsu Memorial Award for Outstanding Senior Design Project}
+{Boston University}
+{Awarded to the best senior design project team where I designed a PID controlled object tracking system on a Xilinx FPGA}
+
+\entry
+{2006--2010}
+{BU Engineering Scholar Award}
+{Boston University}
+{Undergraduate merit award with half-tuition scholarship}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+%% \section{interests}
+
+%% \textbf{professional:} hardware design, machine learning, open source software\\ \textbf{personal:} figure skating, skiing, biking, piano
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+%% \section{publications}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

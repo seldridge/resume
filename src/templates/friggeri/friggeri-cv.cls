@@ -8,24 +8,34 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
-
 %%%%%%%%%%
 % Colors %
 %%%%%%%%%%
 
 \RequirePackage{xcolor}
 
+\input{colorbrewer}
+
 \definecolor{white}{RGB}{255,255,255}
 
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{4D4D4D}
-\definecolor{lightgray}{HTML}{999999}
+%% \definecolor{darkgray}{HTML}{333333}
+%% \definecolor{gray}{HTML}{4D4D4D}
+%% \definecolor{lightgray}{HTML}{999999}
+\colorlet{darkgray}{Greys9p7}
+\colorlet{gray}{Greys9p6}
+\colorlet{lightgray}{Greys9p4}
 
-\definecolor{green}{HTML}{C2E15F}
-\definecolor{orange}{HTML}{FDA333}
-\definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
-\definecolor{blue}{HTML}{6CE0F1}
+
+%% \definecolor{green}{HTML}{C2E15F}
+%% \definecolor{orange}{HTML}{FDA333}
+%% \definecolor{purple}{HTML}{D3A4F9}
+%% \definecolor{red}{HTML}{FB4485}
+%% \definecolor{blue}{HTML}{6CE0F1}
+\colorlet{green}{Greens9p3}
+\colorlet{orange}{Oranges9p3}
+\colorlet{purple}{Purples9p3}
+\colorlet{red}{Reds9p3}
+\colorlet{blue}{Blues9p3}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -53,15 +63,22 @@
 %% \newfontfamily\bodyfont[]{Helvetica Neue}
 %% \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
 %% \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
-\newfontfamily\bodyfont[]{DejaVuSans}
-\newfontfamily\thinfont[]{DejaVuSans-ExtraLight}
-\newfontfamily\headingfont[]{DejaVuSansCondensed-Bold}
+%% \newfontfamily\bodyfont[]{DejaVuSans}
+%% \newfontfamily\thinfont[]{DejaVuSans-ExtraLight}
+%% \newfontfamily\headingfont[]{DejaVuSansCondensed-Bold}
+\newfontfamily\bodyfont[]{SourceSansPro-Regular}
+\newfontfamily\thinfont[]{SourceSansPro-ExtraLight}
+\newfontfamily\headingfont[]{SourceSansPro-Bold}
+\newfontfamily\italicfont[]{SourceSansPro-ExtraLightIt}
 
 \defaultfontfeatures{Mapping=tex-text}
 %% \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
-\setmainfont[Mapping=tex-text, Color=textcolor]{DejaVuSans-ExtraLight}
+\setmainfont[Mapping=tex-text, Color=textcolor]{SourceSansPro-ExtraLight}
 
 %\setmathfont{XITS Math}
+
+%% The italic font is discrete, so I just redefine \emph to use the ``normal'' italic font
+\renewcommand\emph[1]{{\italicfont #1}}
 
 %%%%%%%%%%
 % Header %
@@ -102,10 +119,10 @@
   {%
     \color{%
       \ifcase\value{colorCounter}%
-        blue\or%
         red\or%
-        orange\or%
         green\or%
+        blue\or%
+        orange\or%
         purple\or%
         brown\else%
         headercolor\fi%
@@ -150,13 +167,12 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
+  \parbox[t]{2cm}{#1}&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
     #4\vspace{\parsep}%
   }\\}
-
 
 %%%%%%%%%%%%%%
 % Side block %
@@ -199,7 +215,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \footnotesize\addfontfeature{Color=lightgray}\italicfont%
     \usebibmacro{journal+issuetitle}%
     \setunit{\space}%
     \printfield{pages}%
@@ -219,7 +235,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \footnotesize\addfontfeature{Color=lightgray}\italicfont%
     \printlist{publisher}%
     \setunit*{\addcomma\space}%
     \printfield{note}%
@@ -258,7 +274,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \footnotesize\addfontfeature{Color=lightgray}\italicfont%
     \printfield{booktitle}%
     \setunit*{\addcomma\space}%
     \printfield{note}%
@@ -278,7 +294,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \footnotesize\addfontfeature{Color=lightgray}\italicfont%
     \printfield{type}%
     \setunit{\space}%
     \printfield{number}%
@@ -305,6 +321,13 @@
     \nocite{*}
     \printbibliography[sorting=chronological, type={#1}, title={#2}, heading=bibheading]
   \end{refsection}
+}
+
+\newcommand{\printbibinline}[1]{
+\begin{refsection}
+  \nocite{*}
+  \printbibliography[sorting=chronological, keyword={#1}, heading=none]
+\end{refsection}
 }
 
 \DeclareSortingScheme{chronological}{

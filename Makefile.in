@@ -6,10 +6,11 @@
 # Each one of these needs a set of explicit build rules below. I can't
 # use pattern rules because GNU Make doesn't allow for PHONY pattern
 # rules. More detail below.
-SOURCES_TEX  = __PAPER.tex
+SOURCES_TEX_BASE  = __PAPER
 SOURCES_TEX_UNUSED = __PRESENTATION.tex handout.tex
 
 #--------------------------------------- Configuration that _should_ be static
+SOURCES_TEX = $(addsuffix .tex, $(SOURCES_TEX_BASE))
 DIR_BUILD   = build
 DIR_SRC     = src
 DIR_FIG     = $(DIR_SRC)/figures
@@ -23,7 +24,7 @@ DIR_TEX     = $(DIR_SRC) \
 	$(DIR_TEMPLATES) \
 	$(DIR_EXAMPLES) \
 	$(DIR_CB)/latex
-DIR_BIB     = . ../ ../src/bib build
+DIR_BIB     = . ../ ../src/bib build src/bib
 DIR_SCRIPTS = scripts
 
 SVG         = $(notdir $(shell find $(DIR_FIG_R) -regex '^.+\.svg'))
@@ -65,7 +66,6 @@ LATEXMK_PDF_XELATEX = latexmk \
 LATEXMK_PDF_LUALATEX = latexmk \
 	-lualatex \
 	-latexoption="--shell-escape -halt-on-error -file-line-error" \
-	-bibtex \
 	-time \
 	-outdir=$(DIR_BUILD)
 ENV = env TEXINPUTS="$(TEXINPUTS)$(subst $(SPACE),:,$(DIR_TEX)):" \
