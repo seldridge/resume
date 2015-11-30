@@ -28,6 +28,8 @@
 
 \addbibresource{schuyler.bib} % Specify the bibliography file to include publications
 
+\usepackage{xspace}
+
 \begin{document}
 
 \header{Schuyler}{ Eldridge}{computer engineer} % Your name and current job title/field
@@ -37,7 +39,7 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\CPP}
-{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize ++}\xspace}
 
 \begin{aside} % In the aside, each new line forces a line break
 \section{contact}
@@ -98,10 +100,10 @@ VLSI
 {Ph.D {\normalfont Computer Engineering}}
 {Boston University}
 {\emph{Tightly Integrated Neural Network Accelerator Architectures} \\
-  Design, implementation, and management of neural network accelerator architectures for approximate computing, general use, and prediction of microprocessor state
+  Design, implementation, and management of neural network accelerator architectures for general use, approximate computing, and prediction of microprocessor state
   \begin{itemize}
   \item Parameterized fixed-topology neural network accelerators in Verilog as mathematical function approximators
-  \item Multi-transaction, arbitrary-topology neural network accelerator for a RISC-V microprocessor modeled in C++ and implemented in SystemVerilog and Chisel
+  \item Multi-transaction, arbitrary-topology neural network accelerator for a RISC-V microprocessor modeled in \CPP and implemented in SystemVerilog and Chisel
   \item User and supervisor libraries in C for safe transaction management
   \end{itemize}
   \emph{Biologically-inspired Optical Flow on FPGA} \\
@@ -143,7 +145,7 @@ VLSI
 {Intel Corporation}
 {Hudson, MA}
 {\emph{Graduate Technical Intern} \\
-  Tested and validated memory controllers Verilog/SystemVerilog RTL for an Intel server microprocessor
+  Tested and validated memory controllers in Verilog/SystemVerilog RTL for an Intel server microprocessor
 }
 
 \entry
@@ -151,7 +153,7 @@ VLSI
 {Intel Corporation}
 {Hudson, MA}
 {\emph{Graduate Technical Intern} \\
-  Designed and optimized x86 assembly hashing functions while evaluating possible solutions for quality
+  Designed and optimized hashing functions in x86 assembly while evaluating functions for quality
 }
 
 %------------------------------------------------
