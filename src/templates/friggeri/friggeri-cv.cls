@@ -165,9 +165,11 @@
 
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
+  \vspace{-2ex}
   \begin{longtabu} to \textwidth {@{\extracolsep{\fill}}ll}
 }{%
   \end{longtabu}
+  \vspace{-4ex}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
