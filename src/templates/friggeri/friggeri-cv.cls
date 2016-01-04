@@ -22,10 +22,9 @@
 %% \definecolor{darkgray}{HTML}{333333}
 %% \definecolor{gray}{HTML}{4D4D4D}
 %% \definecolor{lightgray}{HTML}{999999}
-\colorlet{darkgray}{Greys9p7}
-\colorlet{gray}{Greys9p6}
-\colorlet{lightgray}{Greys9p4}
-
+\colorlet{darkgray}{Greys9p8}
+\colorlet{gray}{Greys9p8}
+\colorlet{lightgray}{Greys9p8}
 
 %% \definecolor{green}{HTML}{C2E15F}
 %% \definecolor{orange}{HTML}{FDA333}

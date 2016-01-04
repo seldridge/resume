@@ -19,10 +19,12 @@ DIR_BAK     = $(DIR_SRC)/bak
 DIR_CB      = submodules/palette-art
 DIR_TEMPLATES = $(DIR_SRC)/templates $(shell ls $(DIR_SRC)/templates/*/)
 DIR_EXAMPLES = $(DIR_SRC)/examples
+DIR_LETTERS  = $(DIR_SRC)/letters
 DIR_TEX     = $(DIR_SRC) \
 	$(DIR_FIG_R) \
 	$(DIR_TEMPLATES) \
 	$(DIR_EXAMPLES) \
+	$(DIR_LETTERS) \
 	$(DIR_CB)/latex
 DIR_BIB     = . ../ ../src/bib build src/bib
 DIR_SCRIPTS = scripts
@@ -38,6 +40,11 @@ EXAMPLES_TEX = $(notdir $(shell find $(DIR_EXAMPLES) -regex '^.+\.tex'))
 EXAMPLES_PDF = $(EXAMPLES_TEX:%.tex=$(DIR_BUILD)/%.pdf)
 EXAMPLES_PS  = $(EXAMPLES_TEX:%.tex=$(DIR_BUILD)/%.ps)
 EXAMPLES_OPT = $(TARGETS_PDF:%.pdf=%-opt.pdf)
+
+LETTERS_TEX = $(notdir $(shell find $(DIR_LETTERS) -regex '^.+\.tex'))
+LETTERS_PDF = $(LETTERS_TEX:%.tex=$(DIR_BUILD)/%.pdf)
+LETTERS_PS  = $(LETTERS_TEX:%.tex=$(DIR_BUILD)/%.ps)
+LETTERS_OPT = $(TARGETS_PDF:%.pdf=%-opt.pdf)
 
 SPACE = $(EMPTY) $(EMPTY)
 
@@ -75,8 +82,8 @@ vpath %.tex $(DIR_SRC)
 vpath %.tex $(DIR_EXAMPLES)
 vpath %.svg $(DIR_FIG_R)
 
-.PHONY: all clean examples format format-build noformat-build ps optimized \
-	refresh-mupdf page-limit \
+.PHONY: all clean examples format format-build letters noformat-build ps \
+	optimized refresh-mupdf page-limit \
 	go-for-it
 
 # Default target. This should either be set to build all targets with
@@ -101,6 +108,9 @@ noformat-build: $(TARGETS_EPS) $(TARGETS_PDF) refresh-mupdf page-limit signoff
 
 # Build example resumes
 examples: $(EXAMPLES_PDF) refresh-mupdf
+
+# Build all letters
+letters: $(LETTERS_PDF) refresh-mupdf
 
 # mupdf will refresh on a SIGHUP, so we send a SIGHUP to all
 # instances of mupdf that we find
