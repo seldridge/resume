@@ -172,7 +172,7 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  \parbox[t]{2cm}{#1}&\parbox[t]{11.8cm}{%
+  \parbox[t]{2cm}{#1}&\parbox[t]{0.84\textwidth}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
