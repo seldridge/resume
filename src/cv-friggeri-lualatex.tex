@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Friggeri Resume/CV
 % XeLaTeX Template
 % Version 1.2 (3/5/15)
@@ -68,18 +68,21 @@ TCL
 Cadence RTL Compiler
 Cadence SoC Encounter
 Emacs
-GTKWave
 Gem5
 Git
+GTKWave
 Icarus Verilog
+Jenkins
 Linux
 Modelsim
+Xilinx ISE/Vivado
 \section{coursework}
 Advanced Data Structures
 Computer Architecture
 Control Systems
 Digital Design in Verilog
 Digital Signal Processing
+High Performance Programming
 Microprocessors
 VLSI
 \end{aside}
@@ -101,20 +104,28 @@ VLSI
 {Thesis: \emph{Viable Neuromorphic Computing via Neural Network Accelerators} \\
   Design, implementation, and management of neural network accelerators for general use, approximate computing, and prediction of microprocessor state
   \begin{itemize}
-  \item Designed fixed-topology neural network accelerators in \textbf{Verilog} for mathematical function approximation and evaluated their energy-efficiency with a Cadence ASIC tooflow
-  \item Designed a multi-transaction, arbitrary-topology neural network accelerator modeled in \textbf{\CPP} and integrated/tested with \textbf{gem5}'s x86 architecture
-  \item Implemented this multi-transaction accelerator in both \textbf{SystemVerilog} and \textbf{Chisel}
-  \item Integrated this accelerator as a coprocessor of a \textbf{RISC-V} microprocessor and evaluated the complete system on a Xilinx FPGA platform
-  \item Wrote user and supervisor libraries in \textbf{C} and \textbf{RISC-V assembly} for use by user and kernel processes
-  \item Setup and managed a continuous integration server running Jenkins for automated testing
+  \item Designed a fixed topology neural network accelerator for mathematical function approximation
+    \begin{itemize}
+    \item Implemented in \textbf{Verilog}
+    \item Evaluated for energy-efficiency with a \textbf{Cadence} ASIC tooflow
+    \end{itemize}
+  \item Designed a multi-transaction, arbitrary topology neural network accelerator
+    \begin{itemize}
+    \item Modeled in \textbf{\CPP} and integrated and tested with \textbf{gem5}
+    \item Implemented in both \textbf{SystemVerilog} and \textbf{Chisel}
+    \item Integrated as a coprocessor of a \textbf{RISC-V} microprocessor
+    \item Interfaced with user and kernel via libraries in \textbf{C} and \textbf{RISC-V Assembly}
+    \item Evaluated on a \textbf{Xilinx FPGA} platform
+    \end{itemize}
+  \item Setup and managed an automated testing server running \textbf{Jenkins}
   \end{itemize}
-  \emph{Biologically-inspired optical flow on FPGA} \\
+  \emph{Biologically-Inspired Optical Flow on FPGA} \\
   Implementation of a biologically inspired optical flow algorithm on FPGA
   \begin{itemize}
-  \item Reverse engineered a digital camera interface to capture consecutive frames of a video stream
-  \item Computed optical flow by shifting one image with respect to the other, filtering both with different Gabor filters, and correlating the results
-  \item Designed linear interpolation, square root, division, and CORDIC units and associated state machines in \textbf{Verilog}
-  \item Wrote a custom \textbf{Verilog} UART TX/RX and interfaced this system with \textbf{Matlab}
+  \item Reverse engineered a camera interface to capture consecutive frames of real-time video
+  \item Computed optical flow by shifting one image with respect to the other, filtering both with a Gabor filter bank, and correlating the results
+  \item Designed linear interpolation, square root, division, and CORDIC units as well as associated state machines in \textbf{Verilog}
+  \item Wrote a custom \textbf{Verilog} UART transmitter/receiver and interfaced this system with \textbf{Matlab}
   \end{itemize}
 }
 
@@ -149,20 +160,18 @@ VLSI
 %------------------------------------------------
 
 \entry
-{Summer 2015\\
- Summer 2014\\
- Summer 2013}
+{Summers 2013--2015}
 {NASA Jet Propulsion Lab}
 {Pasadena, CA}
 {\emph{Space Technology Research Fellow}\\
-  Continued neural network accelerator research focusing on their potential for fault tolerance (2013), design of a neural network accelerator simulator in \textbf{\CPP} (2014), and migration of a \textbf{SystemVerilog} hardware implementation to \textbf{Chisel} (2015)}
+  Performed neural network accelerator research focusing on their potential for fault tolerance (2013), design of a neural network accelerator simulator in \textbf{\CPP} (2014), and migration of a \textbf{SystemVerilog} hardware implementation to \textbf{Chisel} (2015)}
 
 \entry
 {Summer 2011}
 {Intel Corporation}
 {Hudson, MA}
 {\emph{Graduate Technical Intern} \\
-  Tested and validated memory controllers in \textbf{SystemVerilog} for an Intel server microprocessor
+  Wrote tests to verify the functionality of memory controllers in \textbf{SystemVerilog} as part of the Xeon server group
 }
 
 \entry
@@ -191,17 +200,17 @@ VLSI
 {2012--2016}
 {Space Technology Research Fellowship}
 {NASA}
-{Four year NASA fellowship titled \emph{Biologically-Inspired Hardware for Land/Aerial Robots}. This award has included yearly on-sites at NASA Jet Propulsion Lab.}
+{Four year NASA fellowship titled \emph{Biologically-Inspired Hardware for Land/Aerial Robots}. This award has included yearly on-sites at NASA facilities.}
 
 \entry
 {2012}
 {CELEST/CompNet Award}
 {Boston University}
-{Awarded at Boston University's Science Day for work titled \emph{Biologically-inspired Hardware for Autonomous Robots}}
+{Awarded at Boston University's Science Day for work titled \emph{Biologically-Inspired Hardware for Autonomous Robots}}
 
 \entry
 {2010}
-{Dean's Fellowship}
+{Boston University Dean's Fellowship}
 {Boston University}
 {Full scholarship merit award for first year Ph.D students}
 
@@ -213,7 +222,7 @@ VLSI
 
 \entry
 {2006--2010}
-{BU Engineering Scholar Award}
+{Boston University Engineering Scholar Award}
 {Boston University}
 {Undergraduate merit award with half-tuition scholarship}
 
