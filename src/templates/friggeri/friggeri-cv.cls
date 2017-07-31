@@ -191,7 +191,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{4.2}(1.5, 4.33)
   \begin{flushright}
   \obeycr
 }{%
@@ -310,9 +310,19 @@
   \par\vspace{0.3\baselineskip}
 }
 
+% \DeclareNameFormat{author}{%
+%    \nameparts{#1}
+%    \small\addfontfeature{Color=lightgray}%
+%    \ifblank{\namepartgiven}{}{\namepartgiven\space}#1%
+%    \ifthenelse{\value{listcount}<\value{liststop}}
+%      {\addcomma\space}
+%      {}%
+% }
+
 \DeclareNameFormat{author}{%
+  \nameparts{#1}
   \small\addfontfeature{Color=lightgray}%
-  \ifblank{#3}{}{#3\space}#1%
+  \ifblank{\namepartgiven}{}{\namepartgiven\space}\namepartfamily%
   \ifthenelse{\value{listcount}<\value{liststop}}
     {\addcomma\space}
     {}%
